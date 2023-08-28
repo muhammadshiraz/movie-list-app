@@ -1,17 +1,23 @@
 <div class="movie-list">
-  <h2>Movie List</h2>
-  <app-movie-filter (filterChanged)="onFilterChanged($event)"></app-movie-filter>  
-  <app-search-filter (filterChanged)="onFilterSearched($event)"></app-search-filter>
-  <ul>
-    <li *ngFor="let movie of movies">
-      <app-movie-item [movie]="movie" (updateMovie)="updateMovie($event)" (deleteMovie)="deleteMovie(movie.id)"></app-movie-item>
-    </li>
-  </ul>
-  <div class="add-movie">
-    <h3>Add a Movie</h3>
-    <input [(ngModel)]="newMovie.title" placeholder="Title">
-    <input [(ngModel)]="newMovie.director" placeholder="Director">
-    <input [(ngModel)]="newMovie.releaseYear" type="number" placeholder="Release Year">
-    <button (click)="addMovie()">Add Movie</button>
+  <div class="container mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+    <h2 class="flex flex-row justify-center items-center gap-x-3 text-center font-semibold text-white text-xl uppercase sm:text-xl md:text-lg lg:text-xl xl:text-3xl"><img [src]="imageSrc" class="w-8 h-8" alt="PANATES - MoviesHub" /><span class="text-orange font-extrabold">PANATES</span><span>-</span>MoviesHub</h2>
+    <div class="flex flex-col sm:flex-row justify-center sm:justify-between items-center my-4 sm:my-8 xl:gap-y-0 gap-y-4">
+      <app-movie-filter (filterChanged)="onFilterChanged($event)"></app-movie-filter>
+      <app-search-filter (filterChanged)="onFilterSearched($event)"></app-search-filter>
+    </div>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-8 mb-8">
+      <li *ngFor="let movie of movies" class="bg-lg-dark">
+        <app-movie-item [movie]="movie" (updateMovie)="updateMovie($event)" (deleteMovie)="deleteMovie(movie.id)"></app-movie-item>
+      </li>
+    </ul>
+    <div class="add-movie">
+      <h3>Add a Movie</h3>
+      <input type="text" [(ngModel)]="newMovie.title" placeholder="Title">
+      <input type="text" [(ngModel)]="newMovie.director" placeholder="Director">
+      <input type="text" [(ngModel)]="newMovie.releaseYear" placeholder="Release Year">
+      <button (click)="addMovie()">Add Movie</button>
+    </div>
   </div>
 </div>
+<!-- Display the modal if showModal is true -->
+<app-modal [error]="true" *ngIf="showModal" [modalTitle]="modalTitle" [modalMessage]="modalMessage" (closeModalEvent)="closeModal()"></app-modal>

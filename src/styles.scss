@@ -1,5 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import the font-family (Raleway) */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+/* Your custom CSS goes here */
 body {
-    text-align: center;
-    margin: 0;
+    font-family: 'Raleway', sans-serif;    
 }

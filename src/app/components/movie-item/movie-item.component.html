@@ -1,18 +1,24 @@
 <div class="movie-item">
   <div *ngIf="movie">
-    <div *ngIf="!isEditing">
-      <h3>{{ movie.title }}</h3>
-      <p>Director: {{ movie.director }}</p>
-      <p>Release Year: {{ movie.releaseYear }}</p>
-      <button (click)="startEditing()">Edit</button>
-      <button (click)="deleteMovie.emit(movie.id)">Delete</button>
+    <div class="movie-card" *ngIf="!isEditing">
+      <h3 class="movie-title">{{ movie.title }}</h3>
+      <div class="movie-details">
+        <p>Director: {{ movie.director }}</p>
+        <p>Release Year: {{ movie.releaseYear }}</p>
+      </div>
+      <div class="movie-actions">
+        <button class="movie-delete" (click)="deleteMovie.emit(movie.id)"><i class="fa fa-trash"></i></button>
+        <button class="movie-edit" (click)="startEditing()"><i class="fa fa-pencil"></i></button>        
+      </div>
     </div>
-    <div *ngIf="isEditing">
+    <div class="isEditing" *ngIf="isEditing">
       <input [(ngModel)]="movie.title" placeholder="Title">
       <input [(ngModel)]="movie.director" placeholder="Director">
       <input [(ngModel)]="movie.releaseYear" type="number" placeholder="Release Year">
-      <button (click)="saveMovieChanges()">Save</button>
-      <button (click)="cancelEdit()">Cancel</button>
+      <div class="flex flex-row justify-between items-center edit-actions">
+        <button class="edit-cancel" (click)="cancelEdit()"><i class="fa fa-times"></i></button>
+        <button class="edit-save" (click)="saveMovieChanges()"><i class="fa fa-check"></i></button>
+      </div>      
     </div>
   </div>
 </div>

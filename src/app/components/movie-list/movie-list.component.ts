@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Movie } from '@app/models/movie.model';
 import { MovieService } from '@app/services/movie.service';
 import { MovieFilterComponent } from '@app/components//movie-filter/movie-filter.component'; // Import the filter component
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { AppConstants } from '@app/app-constants'; // Adjust the import path as needed
 
 @Component({
   selector: 'app-movie-list',
@@ -13,12 +15,21 @@ export class MovieListComponent implements OnInit {
   newMovie: Movie = { id: 0, title: '', director: '', releaseYear: 0 };
   searchQuery: string = ''; // Define the searchQuery property
   filters: any = {}; // Declare filters as an object
+  // Define the imageSrc property
+  imageSrc: string;  
+  modalTitle: string = 'Validation Error';
+  modalMessage: string = 'Please fill in all fields before adding the movie.';
+  showModal: boolean = false;
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService) {
+    this.imageSrc = AppConstants.imagePath.icons.movieTicket;
+  }
 
   @ViewChild(MovieFilterComponent) filterComponent!: MovieFilterComponent; // ViewChild for the filter component
 
   ngOnInit(): void {
+    // Call a method to add dummy data when the component is initialized
+    this.addDummyData();
     this.loadMovies(); // Load movies initially
   }
 
@@ -58,7 +69,7 @@ export class MovieListComponent implements OnInit {
     // Check if any of the required fields (title, director, releaseYear) are empty
     if (!this.newMovie.title || !this.newMovie.director || !this.newMovie.releaseYear) {
       // Display an error message or handle the validation error as needed
-      alert('Please fill in all fields before adding the movie.');
+      this.showModal = true;      
       return; // Exit the function without adding the movie
     }
   
@@ -84,5 +95,32 @@ export class MovieListComponent implements OnInit {
 
     // Reload the movies list after deleting a movie
     this.loadMovies();
+  }
+
+  addDummyData(): void {
+    // Create some dummy movie objects
+    const dummyMovies: Movie[] = [
+      { id: 1, title: 'The Tailor', director: 'Cem Karcı', releaseYear: 2023 },
+      { id: 2, title: 'Kara Para Aşk', director: 'Ahmet Katıksız', releaseYear: 2014 },
+      { id: 3, title: 'The Protector', director: 'Umut Aral Gönenç', releaseYear: 2018 },
+      { id: 4, title: 'Kördügüm', director: 'Yildiz Tunc', releaseYear: 2016 },      
+      // Add more dummy movies as needed
+    ];
+
+    // Add each dummy movie to the service
+    dummyMovies.forEach(movie => {
+      this.movieService.addMovie(movie);
+    });
+  }
+
+  // Function to open the modal with custom title and message
+  openModal(title: string, message: string): void {
+    this.modalTitle = title;
+    this.modalMessage = message;
+    this.showModal = true;
+  }
+  // Function to close the modal
+  closeModal(): void {
+    this.showModal = false;
   }
 }

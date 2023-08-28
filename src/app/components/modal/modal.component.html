@@ -1,0 +1,7 @@
+<div class="modal">
+    <div class="modal-content">
+        <h2 *ngIf="error" class="error-title">{{ modalTitle }}</h2>
+        <p>{{ modalMessage }}</p>
+        <button (click)="closeModal()">Close</button>
+    </div>
+</div>

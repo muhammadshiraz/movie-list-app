@@ -1,18 +1,68 @@
 .movie-list {
     ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        column-gap: 20px;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        li {
-            min-width: 225px;
-            padding: 25px 12px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 2px 2px 15px 5px #efefef;
-        }
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      li {
+        min-width: 225px;
+        border-radius: 20px;
+      }
     }
-}
+    .add-movie {
+      background-color: #fff; /* White background */
+      border-radius: 0.25rem;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+      width: 100%;
+      max-width: 360px; /* Adjust the maximum width as needed */
+      margin: 0 auto; /* Center the form horizontally */
+  
+      h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #212529; /* Dark text color */
+        margin-bottom: 1rem; /* Add spacing below the heading */
+      }
+  
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        height: 40px; /* Set a fixed height for inputs and button */
+        margin-bottom: 1rem; /* Add spacing between elements */
+        padding: 0.5rem;
+        border: 1px solid #212529;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        color: #212529; /* Dark text color */
+        background-color: #f8f9fa; /* Light gray background color */
+        transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+          border 0.2s ease-in-out;
+  
+        &:focus {
+          outline: none; /* Remove the outline on focus */
+          background-color: #fff; /* White background on focus */
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on focus */
+          border: 1px solid rgb(213, 147, 34); /* Creative border for inputs */
+        }
+      }
+  
+      button {
+        width: 100%;
+        height: 40px; /* Set a fixed height for inputs and button */
+        background-color: rgb(213, 147, 34); /* Custom button background color */
+        color: #fff; /* White text color */
+        padding: 0.5rem;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        &:hover {
+          background-color: rgb(225 174 87); /* Darker blue on hover */
+        }
+        &:focus {
+          outline: none; /* Remove the outline on focus */
+        }
+      }
+    }
+  }
+  

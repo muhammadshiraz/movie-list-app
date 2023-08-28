@@ -1,0 +1,44 @@
+.movie-filter {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 1rem; /* Add spacing between elements */
+    height: 40px;
+    label {
+      font-weight: bold;
+      color: #fff; /* White text color */      
+    }  
+    select {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid #ccc; /* Gray border */
+      border-radius: 0.25rem;
+      height: 100%;
+      background-color: #fff; /* White background color */
+      color: #212529; /* Dark text color */
+      font-size: 1rem;
+      appearance: none; /* Remove the default dropdown arrow */
+      cursor: pointer;
+  
+      &:focus {
+        outline: none; /* Remove the outline on focus */
+        box-shadow: 0 0 3px rgba(0, 123, 255, 0.5); /* Add a subtle shadow on focus */
+      }
+    }  
+    button {
+        padding: 0.25rem 0.8rem;
+        color: #fff; /* White text color */
+        border: none;
+        height: 100%;
+        border-radius: 0.25rem;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: rgb(225 174 87); /* Darker blue on hover */            
+        }
+
+        &:focus {
+            outline: none; /* Remove the outline on focus */
+        }
+    }
+}
+  

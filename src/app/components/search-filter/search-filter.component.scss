@@ -1,0 +1,20 @@
+.search-filter {
+    display: flex;
+    align-items: center;
+    input[type="text"] {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.25rem;
+        background-color: #fff; /* White background */
+        color: #212529; /* Text color */
+        font-size: 1rem;
+        flex: 1; /* Take up remaining space */
+        &::placeholder {
+            color: #868e96; /* Placeholder text color */
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+  

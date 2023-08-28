@@ -9,6 +9,7 @@ import { MovieListComponent } from '@app/components/movie-list/movie-list.compon
 import { MovieItemComponent } from '@app/components/movie-item/movie-item.component';
 import { SearchFilterComponent } from '@app/components/search-filter/search-filter.component';
 import { MovieFilterComponent } from './components/movie-filter/movie-filter.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MovieFilterComponent } from './components/movie-filter/movie-filter.com
     MovieItemComponent,
     SearchFilterComponent,
     MovieFilterComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
