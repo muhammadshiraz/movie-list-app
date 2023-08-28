@@ -1,0 +1,8 @@
+<div class="movie-filter">
+    <label for="releaseYear">Release Year:</label>
+    <select id="releaseYear" [(ngModel)]="selectedReleaseYear">
+        <option value="">All</option>
+        <option *ngFor="let year of releaseYears" [value]="year">{{ year }}</option>
+    </select>
+    <button (click)="applyFilter()">Apply Filter</button>
+</div>

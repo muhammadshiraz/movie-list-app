@@ -1,5 +1,7 @@
 <div class="movie-list">
   <h2>Movie List</h2>
+  <app-movie-filter (filterChanged)="onFilterChanged($event)"></app-movie-filter>  
+  <app-search-filter (filterChanged)="onFilterSearched($event)"></app-search-filter>
   <ul>
     <li *ngFor="let movie of movies">
       <app-movie-item [movie]="movie" (updateMovie)="updateMovie($event)" (deleteMovie)="deleteMovie(movie.id)"></app-movie-item>

@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module'; // Import AppRoutingMod
 import { AppComponent } from './app.component';
 import { MovieListComponent } from '@app/components/movie-list/movie-list.component';
 import { MovieItemComponent } from '@app/components/movie-item/movie-item.component';
+import { SearchFilterComponent } from '@app/components/search-filter/search-filter.component';
+import { MovieFilterComponent } from './components/movie-filter/movie-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     MovieItemComponent,
+    SearchFilterComponent,
+    MovieFilterComponent,
   ],
   imports: [
     BrowserModule,
