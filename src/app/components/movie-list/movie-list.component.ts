@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Movie } from '@app/models/movie.model';
 import { MovieService } from '@app/services/movie.service';
 import { MovieFilterComponent } from '@app/components//movie-filter/movie-filter.component'; // Import the filter component
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { AppConstants } from '@app/app-constants'; // Adjust the import path as needed
 
 @Component({
@@ -16,7 +15,7 @@ export class MovieListComponent implements OnInit {
   searchQuery: string = ''; // Define the searchQuery property
   filters: any = {}; // Declare filters as an object
   // Define the imageSrc property
-  imageSrc: string;  
+  imageSrc: string;
   modalTitle: string = 'Validation Error';
   modalMessage: string = 'Please fill in all fields before adding the movie.';
   showModal: boolean = false;

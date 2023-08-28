@@ -9,53 +9,82 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
   z-index: 999; /* Ensure the modal is on top of other content */
-}
 
-.modal-content {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  position: relative;
-}
+  @media (max-width: 767px) {
+    /* Adjust styles for screens with a width of 767px or less */
+    align-items: center; /* Change vertical alignment to the top */
+    padding: 1rem; /* Add some padding around the modal content */
+  }
 
-/* Style the title if available */
-.modal-content h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #212529; /* Dark text color */
-}
+  .modal-content {
+    /* Your existing styles for the modal content */
 
-/* Style the message */
-.modal-content p {
-  font-size: 1rem;
-  color: #212529; /* Dark text color */
-  margin-bottom: 1rem;
-}
+    @media (max-width: 767px) {
+      /* Adjust styles for screens with a width of 767px or less */
+      max-width: 90%; /* Reduce the maximum width of the modal content */
+    
+    }
+  }
 
-/* Style the close button */
-.modal-content button {
-  background-color: #007bff; /* Blue button background color */
-  color: #fff; /* White text color */
-  border: none;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  font-size: 0.8rem;
-  transition: background-color 0.2s ease-in-out;
-}
+  .modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
 
+    /* Style the title if available */
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #212529; /* Dark text color */
+    }
 
-/* Hover effect for the close button */
-.modal-content button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
+    /* Style the message */
+    p {
+      font-size: 1rem;
+      color: #212529; /* Dark text color */
+      margin-bottom: 1rem;
+    }
 
-/* Style the error title */
-.error-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff0000; /* Red color for error titles */
-  margin-bottom: 1rem;
+    /* Style the close button */
+    .close-button {
+      background-color: #007bff; /* Blue button background color */
+      color: #fff; /* White text color */
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 25px; /* Adjust the border-radius for a circular button */
+      font-size: 0.8rem;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem; /* Adjust the gap between the icon and text */
+    
+      /* Transition effect for a smooth hover */
+      transition: background-color 0.2s ease-in-out;
+    
+      /* Hover effect for the button */
+      &:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+      }
+    
+      /* Style the close icon */
+      .close-icon {
+        font-size: 1.2rem;
+        color: #fff; /* White icon color */
+      }
+    }
+    
+  }
+
+  /* Style the error title */
+  .error-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000; /* Red color for error titles */
+    margin-bottom: 1rem;
+  }
 }

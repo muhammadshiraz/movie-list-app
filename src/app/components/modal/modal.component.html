@@ -1,7 +1,8 @@
 <div class="modal">
     <div class="modal-content">
-        <h2 *ngIf="error" class="error-title">{{ modalTitle }}</h2>
+        <img [src]="imageSrc" class="w-8 h-8 mx-auto" alt="Validation Error" />
+        <h2 *ngIf="error" class="error-title mt-1.2">{{ modalTitle }}</h2>
         <p>{{ modalMessage }}</p>
-        <button (click)="closeModal()">Close</button>
+        <button class="close-button" (click)="closeModal()">Close</button>
     </div>
 </div>
