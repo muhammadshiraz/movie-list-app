@@ -30,13 +30,8 @@ To run this project locally, follow these steps:
 1. Clone the repository: `git clone <repository-url>`
 2. Navigate to the project directory: `cd movie-list-app`
 3. Install dependencies: `npm install`
-4. Start the development server: `npm start`
+4. Start the development server: `ng serve`
 5. Open your browser and visit: `http://localhost:4200`
-## Configuration
-
-To set up the project, you'll need to configure the following:
-
-- API keys: Obtain API keys for [Service X](link) and add them to the `.env` file.
 
 ## Deployment
 
