@@ -1,27 +1,51 @@
-# MovieListApp
+# PANATES - MOVIESHUB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.7.
+![App Screenshot](src/assets/image/screenshot.png)
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+"PANATES - MOVIESHUB" is a web application built using Angular. It provides a platform for users to explore and discover information about movies.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [ ] Search for movies by title, genre, or keywords.
+- [ ] Browse a curated list of popular movies.
+- [ ] View detailed information about each movie, including cast, crew, and reviews.
+- [ ] Save your favorite movies to a watchlist.
+- [ ] Rate and review movies you've watched.
 
-## Build
+## Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular
+- TypeScript
+- RxJS
+- Tailwind CSS
+- Font Awesome
+- Jasmine and Karma for testing
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run this project locally, follow these steps:
 
-## Running end-to-end tests
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd movie-list-app`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your browser and visit: `http://localhost:4200`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Development
 
-## Further help
+If you'd like to contribute to this project, please follow these guidelines:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix: `git checkout -b feature-name`
+3. Make your changes and commit them with descriptive messages.
+4. Push your branch to your fork: `git push origin feature-name`
+5. Create a Pull Request with a clear title and description.
+
+## Testing
+
+To run tests for this project, use the following command:
+
+```bash
+npm test
