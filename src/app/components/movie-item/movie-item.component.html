@@ -1,0 +1,18 @@
+<div class="movie-item">
+  <div *ngIf="movie">
+    <div *ngIf="!isEditing">
+      <h3>{{ movie.title }}</h3>
+      <p>Director: {{ movie.director }}</p>
+      <p>Release Year: {{ movie.releaseYear }}</p>
+      <button (click)="startEditing()">Edit</button>
+      <button (click)="deleteMovie.emit(movie.id)">Delete</button>
+    </div>
+    <div *ngIf="isEditing">
+      <input [(ngModel)]="movie.title" placeholder="Title">
+      <input [(ngModel)]="movie.director" placeholder="Director">
+      <input [(ngModel)]="movie.releaseYear" type="number" placeholder="Release Year">
+      <button (click)="saveMovieChanges()">Save</button>
+      <button (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
+</div>

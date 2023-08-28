@@ -1,0 +1,15 @@
+<div class="movie-list">
+  <h2>Movie List</h2>
+  <ul>
+    <li *ngFor="let movie of movies">
+      <app-movie-item [movie]="movie" (updateMovie)="updateMovie($event)" (deleteMovie)="deleteMovie(movie.id)"></app-movie-item>
+    </li>
+  </ul>
+  <div class="add-movie">
+    <h3>Add a Movie</h3>
+    <input [(ngModel)]="newMovie.title" placeholder="Title">
+    <input [(ngModel)]="newMovie.director" placeholder="Director">
+    <input [(ngModel)]="newMovie.releaseYear" type="number" placeholder="Release Year">
+    <button (click)="addMovie()">Add Movie</button>
+  </div>
+</div>
