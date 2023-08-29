@@ -1,139 +1,138 @@
 .movie-item {
-  display: flex;
-  flex-direction: column;
-  .movie-card {
-    padding: 1.65rem;
-    /* Style the movie title */
-    .movie-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: rgb(213, 147, 34); /* Dark text color */
-      margin-bottom: 0.5rem; /* Add spacing below the title */
-    }
-
-    /* Style the movie director and release year */
-    .movie-details {
-      font-size: 1rem;
-      color: #6c757d; /* Gray text color */
-    }
-
-    /* Style the update and delete buttons */
-    .movie-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1rem; /* Add spacing above the buttons */
-      button {
-        color: #fff; /* White text color */
-        border: none;
-        cursor: pointer;
-        padding: 0.25rem 1rem;
-        border-radius: 0.25rem;
-        font-size: 0.8rem;
-        transition: background-color 0.2s ease-in-out;
-        /* Define a custom CSS class for the Edit button */
-        &.movie-edit {
-          background-color: #007bff; /* Blue background color */
+    display: flex;
+    flex-direction: column;
+    .movie-card {
+      padding: 1.65rem;
+      /* Style the movie title */
+      .movie-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: rgb(213, 147, 34); /* Dark text color */
+        margin-bottom: 0.5rem; /* Add spacing below the title */
+      }
+      /* Style the movie director and release year */
+      .movie-details {
+        font-size: 1rem;
+        color: #6c757d; /* Gray text color */
+      }
+      /* Style the update and delete buttons */
+      .movie-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem; /* Add spacing above the buttons */
+        button {
           color: #fff; /* White text color */
           border: none;
           cursor: pointer;
-          padding: 0.25rem 0.5rem;
+          padding: 0.25rem 1rem;
           border-radius: 0.25rem;
           font-size: 0.8rem;
           transition: background-color 0.2s ease-in-out;
-
+          /* Define a custom CSS class for the Edit button */
+          &.movie-edit {
+            background-color: #007bff; /* Blue background color */
+            color: #fff; /* White text color */
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            transition: background-color 0.2s ease-in-out;
+  
+            &:hover {
+              background-color: #0056b3; /* Darker blue on hover */
+            }
+          }
+          /* Define a custom CSS class for the delete button */
+          &.movie-delete {
+            background-color: #ff3838; /* Red background color */
+            color: #fff; /* White text color */
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            transition: background-color 0.2s ease-in-out;
+  
+            &:hover {
+              background-color: #ff0000; /* Darker red on hover */
+            }
+          }
+  
           &:hover {
             background-color: #0056b3; /* Darker blue on hover */
           }
         }
-        /* Define a custom CSS class for the delete button */
-        &.movie-delete {
+      }
+    }
+    /* Styles for the editing container */
+    .isEditing {
+      /* Set background color and padding for the editing container */
+      background-color: #fff; /* White background */
+      padding: 1.2rem;
+      min-width: 225px;
+      border-radius: 20px;
+      /* Style the input fields */
+      input {
+        width: 100%;
+        height: 25px;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        border: 1px solid #212529;
+        border-radius: 0.25rem;
+        font-size: 0.8rem;
+        color: #212529; /* Dark text color */
+        background-color: #f8f9fa; /* Light gray background color */
+        transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        &:focus {
+          outline: none;
+          background-color: #fff; /* White background on focus */
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+        }
+      }
+      /* Style the buttons in editing mode */
+      button {
+        color: #fff; /* White text color */
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.8rem;
+        transition: background-color 0.2s ease-in-out;
+        &:hover {
+          background-color: #ff9800; /* Darker orange on hover */
+        }
+        /* Styles for the Cancel and Save buttons */
+        &.edit-cancel {
           background-color: #ff3838; /* Red background color */
-          color: #fff; /* White text color */
-          border: none;
-          cursor: pointer;
-          padding: 0.25rem 0.5rem;
-          border-radius: 0.25rem;
-          font-size: 0.8rem;
-          transition: background-color 0.2s ease-in-out;
-
+  
           &:hover {
             background-color: #ff0000; /* Darker red on hover */
           }
-        }
-
-        &:hover {
-          background-color: #0056b3; /* Darker blue on hover */
-        }
-      }
-    }
-  }
-  /* Styles for the editing container */
-  .isEditing {
-    /* Set background color and padding for the editing container */
-    background-color: #fff; /* White background */
-    padding: 1.2rem;
-    min-width: 225px;
-    border-radius: 20px;
-    /* Style the input fields */
-    input {
-      width: 100%;
-      height: 25px;
-      margin-bottom: 0.5rem;
-      padding: 0.5rem;
-      border: 1px solid #212529;
-      border-radius: 0.25rem;
-      font-size: 0.8rem;
-      color: #212529; /* Dark text color */
-      background-color: #f8f9fa; /* Light gray background color */
-      transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-      &:focus {
-        outline: none;
-        background-color: #fff; /* White background on focus */
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-      }
-    }
-    /* Style the buttons in editing mode */
-    button {
-      color: #fff; /* White text color */
-      border: none;
-      cursor: pointer;
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
-      font-size: 0.8rem;
-      transition: background-color 0.2s ease-in-out;
-      &:hover {
-        background-color: #ff9800; /* Darker orange on hover */
-      }
-      /* Styles for the Cancel and Save buttons */
-      &.edit-cancel {
-        background-color: #ff3838; /* Red background color */
-
-        &:hover {
-          background-color: #ff0000; /* Darker red on hover */
-        }
-
-        &:disabled {
-          /* Optional: Add styles for disabled buttons */
-          background-color: #ccc; /* Light gray background for disabled state */
-          cursor: not-allowed;
-          color: #888; /* Gray text color for disabled state */
-        }
-      }      
-      &.edit-save {
-        background-color: #28a745; /* Green background color */
-
-        &:hover {
-          background-color: rgb(213, 147, 34); /* Darker red on hover */
-        }
-
-        &:disabled {
-          /* Optional: Add styles for disabled buttons */
-          background-color: #ccc; /* Light gray background for disabled state */
-          cursor: not-allowed;
-          color: #888; /* Gray text color for disabled state */
+  
+          &:disabled {
+            /* Optional: Add styles for disabled buttons */
+            background-color: #ccc; /* Light gray background for disabled state */
+            cursor: not-allowed;
+            color: #888; /* Gray text color for disabled state */
+          }
+        }      
+        &.edit-save {
+          background-color: #28a745; /* Green background color */
+  
+          &:hover {
+            background-color: rgb(213, 147, 34); /* Darker red on hover */
+          }
+  
+          &:disabled {
+            /* Optional: Add styles for disabled buttons */
+            background-color: #ccc; /* Light gray background for disabled state */
+            cursor: not-allowed;
+            color: #888; /* Gray text color for disabled state */
+          }
         }
       }
     }
   }
-}
+  
